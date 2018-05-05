@@ -1,0 +1,11 @@
+<div class="row">	
+	<div class="col-span-12 alertalert">
+		<div class="alert alert-primary" role="alert">
+		<div id="flash_messages">
+			<% flash.each do |key, value| %>
+			<%= content_tag(:div, value, :class => "flash #{key}") %>
+			<% end %>
+		</div>
+		<div>
+	</div>
+</div>
