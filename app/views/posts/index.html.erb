@@ -3,14 +3,13 @@
  
 
  <%= link_to 'New post', new_post_path %>
- 
+
 <table>
   <tr>
     <th>Title</th>
     <th>Text</th>
     <th></th>
   </tr>
- 
   <% @posts.each do |post| %>
     <tr>
       <td><%= post.title %></td>
@@ -22,4 +21,12 @@
 		              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
-</table>
+		</table>
+		
+		
+<div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @posts %>
+    </div>
+    <%= will_paginate @posts, :container => false %>
+  </div>

@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-        @posts = Post.order(id: :desc).limit(5)
+        @newposts = Post.order(id: :desc).limit(5)
   end
   
   

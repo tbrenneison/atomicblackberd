@@ -27,6 +27,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#">Contact</a>
 					</li>
+					<% if user_signed_in? %>
+						<li class="nav-link"><%= link_to('Logout', destroy_user_session_path, method: :delete) %>     </li>   
+					<% end %>
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
 					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -39,9 +42,7 @@
 				<%= render 'layouts/flash' if !flash.empty? %>
 				<!--login notice--> 
 				<div class="row">
-						<% if user_signed_in? %>
-							<%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
-						<% end %>
+
 					</div> <!--end login notice-->
 										
 					</div> <!--end of container_fluid 1-->
