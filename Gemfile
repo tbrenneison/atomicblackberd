@@ -31,7 +31,7 @@ gem 'jquery-rails'
 # will_paginate for pagination 
 gem 'will_paginate', '~> 3.1.0'
 #ckeditor WYSIWYG text editor 
-gem 'ckeditor'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 #carrierwave for file upload w/ ckeditor + mini_magick
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
