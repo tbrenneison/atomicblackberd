@@ -30,6 +30,11 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 # will_paginate for pagination 
 gem 'will_paginate', '~> 3.1.0'
+#ckeditor WYSIWYG text editor 
+gem 'ckeditor'
+#carrierwave for file upload w/ ckeditor + mini_magick
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
