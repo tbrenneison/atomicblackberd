@@ -2,7 +2,12 @@
 <% @newposts.each do |post| %>
 <div class="newpostindexcontainer">
 	<h4><%= link_to post.title, post %></h2>
-		<p><%= sanitize post.text.truncate(100) %></p>
+		<% if post.updated_at != post.created_at %>
+		<p class="byline"><b>Updated At:</b> <%=post.updated_at.strftime("%m/%d/%Y %I:%M%p") %></p>
+		<% else %>
+		<p class="byline"><b>Posted At:</b>  <%=post.created_at.strftime("%m/%d/%Y %I:%M%p")%></p>
+		<%end %>
+		<p><%= sanitize post.text.truncate(200), tags: %w(strong em u i b p) %></p>
 		<% if post.text.length > 0 %>
 		<%= link_to "read more", post %></p>
 		<% end %>
