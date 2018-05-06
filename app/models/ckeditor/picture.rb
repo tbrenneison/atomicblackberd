@@ -5,5 +5,6 @@ class Ckeditor::Picture < Ckeditor::Asset
     url(:content)
   end
   
+  #https://github.com/galetahub/ckeditor/issues/739
   self.inheritance_column = nil
 end
