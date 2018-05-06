@@ -1,17 +1,25 @@
 <div class="showpost">
-<p>
-  <strong>Title:</strong>
+<h2>
   <%= post.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= post.text.html_safe %>
-</p>
+</h2>
+<p class="byline"><b>Author:</b> 
+	<%= post.author %></p>
+<% if post.updated_at != post.created_at %>
+<p class="byline"><b>Updated At:</b> <%=post.updated_at.strftime("%m/%d/%Y %I:%M%p") %></p>
+<% else %>
+<p class="byline"><b>Posted At:</b>  <%=post.created_at.strftime("%m/%d/%Y %I:%M%p")%></p>
+<%end %>
 
+<div class="postcontent">
+  <%= post.text.html_safe %>
+</div>
+
+
+<% if user_signed_in? %>
 <%= link_to 'Edit', edit_post_path(post) %>
 <%= link_to 'Back', posts_path %>
 <%= link_to 'Destroy', post_path(post),
 		              method: :delete,
 		              data: { confirm: 'Are you sure?' } %>
+<% end %>
 </div>

@@ -2,7 +2,9 @@
 <% @newposts.each do |post| %>
 <div class="newpostindexcontainer">
 	<h4><%= link_to post.title, post %></h2>
-		<p><%= post.text.truncate(100).html_safe %></p>
+		<p><%= sanitize post.text.truncate(100) %></p>
+		<% if post.text.length > 0 %>
 		<%= link_to "read more", post %></p>
+		<% end %>
 	</div>
 	<% end %>

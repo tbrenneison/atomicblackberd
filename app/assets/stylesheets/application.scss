@@ -3,25 +3,179 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+body { 
+	background-color: #00A29A; 
+}
+
 p { 
 word-wrap:break-word;
 }
 
+.postcontent {
+	word-wrap:break-word;
+}
+
+.byline { 
+	font-size: 10px;
+}
+$aDefault: #ffc1b8;
+$aDarker: #f7aaad;
+
+a:link {
+    color: $aDefault; 
+}
+
+a:visited {
+    color: $aDefault; 
+}
+
+a:hover {
+color: $aDarker;
+text-decoration: none;
+}
+
+a:active {
+color: $aDarker;
+}
+
+.navbar { 
+	height: 100px;
+	background-color: #FFC1B8;
+}
+
+.navbar-brand { 
+	font-family: Arial;
+	font-size: 40px; 
+	font-family: 'Pacifico', cursive;
+	color: #000000;
+}
+
+.headerfont { 
+	font-family: 'Pacifico', cursive;
+}
 .newpostindexcontainer { 
-	background-color: yellow;
+	background-color: #FFFFFF;
+	text-align: left;
 	border: 1px solid black;
 	border-radius: 5px;
 	padding: 5px;
 }
 
 .showpost { 
-	background-color: gray;
+	background-color: #FFFFFF;
 	border: 1px solid black;
 	border-radius: 5px;
 	margin: 5px;
 	padding: 5px;
 }
 
+
+$bgDefault      : #ffc1b8;
+$bgHighlight    : #f79688;
+$colDefault     : #000000;
+$colHighlight   : #000000;
+$dropDown       : true;
+.navbar {
+  background-color: $bgDefault;
+  z-index: 50;
+  .navbar-form { 
+     color: $colDefault;
+	background-color: $bgDefault;
+     border-radius: .25rem;
+     margin: 0 0.25em;
+  }
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; 
+    a {
+      color: $colHighlight;
+      &:hover, &:focus {
+        color: $colHighlight; }}}
+  .navbar-nav {
+    .nav-link {
+      color: $colDefault;
+		background-color: $bgDefault;
+      border-radius: .25rem;
+      margin: 0 0.25em;
+      &:not(.disabled) {
+        &:hover, &:focus {
+          color: $colHighlight; }}}
+    @if ($dropDown) {
+      .dropdown-menu {
+        background-color: $bgDefault;
+        border-color: $bgHighlight;
+        .dropdown-item {
+          color: $colDefault;
+          &:hover, &:focus, &.active {
+            color: $colHighlight;
+            background-color: $bgHighlight; }}
+        .dropdown-divider {
+          border-top-color: $bgHighlight; }}}
+    .nav-item.active, .nav-item.show {
+      .nav-link, .nav-link:hover, .nav-link:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .navbar-toggler-icon {
+      color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 575px) {
+  .navbar-expend-sm .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    .dropdown-item.active {
+      color: $colHighlight;
+      background-color: $bgHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-expend-md .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    .dropdown-item.active {
+      color: $colHighlight;
+      background-color: $bgHighlight; }}}
+@media (max-width: 991px) {
+  .navbar-expend-lg .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    .dropdown-item.active {
+      color: $colHighlight;
+      background-color: $bgHighlight; }}}
+@media (max-width: 1199px) {
+  .navbar-expend-xl .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    .dropdown-item.active {
+      color: $colHighlight;
+      background-color: $bgHighlight; }}}
+.navbar-expend .navbar-nav .show .dropdown-menu {
+  .dropdown-item {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .dropdown-item.active {
+    color: $colHighlight;
+    background-color: $bgHighlight; }}
+	 
 .digg_pagination {
   background: white;
   cursor: default;

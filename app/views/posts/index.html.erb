@@ -1,13 +1,13 @@
 
-<h1>Listing posts</h1>
+<h1>Blog</h1>
 
 <% if user_signed_in? %>
 <li class="nav-link"><%= link_to 'New post', new_post_path %> </li>   
 <% end %>
 <div class="row">
-	<div class="col-md-2">
+	<div class="col-md-1">
 	</div>
-	<div class="col-md-8">
+	<div class="col-md-10">
 		<%= render partial: "onepost", collection: @posts, as: :post %>
 			<div class="digg_pagination">
 				<div class="page_info">
@@ -16,6 +16,6 @@
 				<%= will_paginate @posts, :container => false %>
 			</div>
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-1">
 	</div>
 </div>
