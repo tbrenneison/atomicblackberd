@@ -3,12 +3,24 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+p { 
+word-wrap:break-word;
+}
+
 .newpostindexcontainer { 
 	background-color: yellow;
 	border: 1px solid black;
 	border-radius: 5px;
+	padding: 5px;
 }
 
+.showpost { 
+	background-color: gray;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 5px;
+	padding: 5px;
+}
 
 .digg_pagination {
   background: white;

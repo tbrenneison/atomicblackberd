@@ -1,6 +1,8 @@
-<h2>Recent Posts</h2>
+
 <% @newposts.each do |post| %>
-<h4><%= link_to post.title, post %></h2>
-	<%= link_to "read more", post %></p>
-	<hr>
+<div class="newpostindexcontainer">
+	<h4><%= link_to post.title, post %></h2>
+		<p><%= post.text.truncate(100) %></p>
+		<%= link_to "read more", post %></p>
+	</div>
 	<% end %>
