@@ -28,17 +28,17 @@
 						<%= link_to('Blog', posts_path, class: "nav-link") %>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">About</a>
+						<%= link_to('About', welcome_about_path, class: "nav-link") %>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Contact</a>
+						<%= link_to('Contact', welcome_contact_path, class: "nav-link") %>
 					</li>
 					<% if user_signed_in? %>
 						<li class="nav-link"><%= link_to('Logout', destroy_user_session_path, method: :delete) %>     </li>   
 					<% end %>
 				</ul>
 				<%= form_tag(posts_path, :method => "get", id: "search-form", class: "form-inline my-2 my-lg-0 navbar-form" ) do %>
-				    <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control mr-sm-2" %>
+				    <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: "form-control mr-sm-2" %>
 				    <%= submit_tag "Search", :name => nil, class: "btn btn-outline-dark btn-small my-2 my-sm-0 headerfont"  %>
 				<% end %>
 			</div>
