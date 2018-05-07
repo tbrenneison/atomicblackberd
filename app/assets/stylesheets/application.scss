@@ -41,6 +41,15 @@ word-wrap:break-word;
 	font-size: 12px;
 }
 
+.listingcard { 
+	background-color: #ffffff;
+	border-radius: 5px;
+	border: 1px solid #000000;
+	padding: 5px; 
+	margin: 10px;
+	display: block;
+}
+
 a:link {
     color: $aDefault; 
 }

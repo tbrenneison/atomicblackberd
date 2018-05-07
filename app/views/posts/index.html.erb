@@ -1,7 +1,9 @@
-<% if user_signed_in? %>
+		<h1 class="headerfont">Blog</h1>
+		<% if user_signed_in? %>
 <li class="nav-link"><%= link_to 'New post', new_post_path %> </li>   
 <% end %>
 <div class="row">
+
 	<div class="col-md-2">
 		<div id="tag_cloud" style="word-wrap:break-word;">
 			<% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>

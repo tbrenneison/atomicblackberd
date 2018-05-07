@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
   end
   
   def index
-    @listings = Listing.all
+    @listings = Listing.paginate(:page => params[:page]).order("created_at DESC")
   end
   
   def edit

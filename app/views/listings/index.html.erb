@@ -1,3 +1,22 @@
-<h1> listing index </h1>
-
+<div class="row">
+	<div class="col-md-12">
+	<h1 class="headerfont">For Sale</h1>
+</div>
+</div>
+<div class="row">
+	<div class="col-md-1">
+	</div>
+	<div class="col-md-10">
 <%= render partial: "onelisting", collection: @listings, as: :listing %>
+</div>
+	<div class="col-md-1">
+	</div>
+	<div class="col-md-9 paginationcontainer">
+			<div class="page_info">
+				<%= page_entries_info @listings %>
+			</div>
+			<div class="pagination">
+				<%= will_paginate @listings, :container => false %>
+			</div>
+	</div>
+</div>
