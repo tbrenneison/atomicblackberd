@@ -19,6 +19,11 @@ body {
 	background-color: $bodybgDefault; 
 }
 
+.footerclass { 
+	background-color: $bgDefault;
+	text-align: center;
+}
+
 p { 
 word-wrap:break-word;
 }
@@ -33,7 +38,7 @@ word-wrap:break-word;
 }
 
 .byline { 
-	font-size: 10px;
+	font-size: 12px;
 }
 
 a:link {

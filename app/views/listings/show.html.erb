@@ -1,0 +1,22 @@
+<div class="col-md-6 showpost">
+<p>
+  <strong>Title:</strong>
+  <%= @listing.title %>
+</p>
+ 
+ <p>
+   <strong>Price:</strong>
+   <%= @listing.price %>
+ </p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description.html_safe %>
+</p>
+
+
+<% if user_signed_in? %>
+<%= link_to 'Edit', edit_listing_path(@listing) %>
+<%= link_to 'Back', listings_path %>
+<% end %>
+</div>

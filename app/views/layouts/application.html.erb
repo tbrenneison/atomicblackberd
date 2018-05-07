@@ -33,6 +33,9 @@
 					<li class="nav-item">
 						<%= link_to('Contact', welcome_contact_path, class: "nav-link") %>
 					</li>
+					<li class="nav-item">
+						<%= link_to('For Sale', listings_path, class: "nav-link") %>
+					</li>
 					<% if user_signed_in? %>
 						<li class="nav-link"><%= link_to('Logout', destroy_user_session_path, method: :delete) %>     </li>   
 					<% end %>
@@ -50,6 +53,15 @@
 					<div class="container-fluid" style="padding-top: 10px; padding-bottom: 10px;">
 							<%= yield %>
 					</div> <!--end of container_fluid 2 -->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12 footerclass">
+								<footer>
+									<p class="headerfont byline">Atomic Blackbird content copyright 2018 Tori Brenneison</p>
+								</footer>
+							</div>
+						</div>
+					</div>
 	 
 				</body>
 				</html>

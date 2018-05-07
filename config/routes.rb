@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'welcome/contact'
   
   resources :posts
+  resources :listings
   
   root 'welcome#index'
   
