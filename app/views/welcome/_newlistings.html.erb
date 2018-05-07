@@ -1,0 +1,15 @@
+
+<% @newlistings.each do |listing| %>
+<div class="indexcontainer">
+	<h4><%= link_to listing.title, listing %></h2>
+		<% if listing.updated_at != listing.created_at %>
+		<p class="byline"><b>Updated At:</b> <%=listing.updated_at.strftime("%m/%d/%Y %I:%M%p") %></p>
+		<% else %>
+		<p class="byline"><b>Posted At:</b>  <%=listing.created_at.strftime("%m/%d/%Y %I:%M%p")%></p>
+		<%end %>
+		<p><%= sanitize listing.description.truncate(1000), tags: %w(strong em u i b p) %></p>
+		<% if listing.description.length > 0 %>
+		<%= link_to "view listing", listing %></p>
+		<% end %>
+	</div>
+	<% end %>

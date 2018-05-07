@@ -1,23 +1,21 @@
-<div class="listingcard">
-<h2>
-  <%= listing.title %>
-</h2>
-<% if listing.updated_at != listing.created_at %>
-<p class="byline"><b>Updated At:</b> <%=listing.updated_at.strftime("%m/%d/%Y %I:%M%p") %></p>
-<% else %>
-<p class="byline"><b>Posted At:</b>  <%=listing.created_at.strftime("%m/%d/%Y %I:%M%p")%></p>
-<%end %>
+<div class="showcard">
+	<h2><%= listing.title %></h2>
+	<% if listing.updated_at != listing.created_at %>
+		<p class="byline"><b>Updated At:</b> <%=listing.updated_at.strftime("%m/%d/%Y %I:%M%p") %></p>
+	<% else %>
+		<p class="byline"><b>Posted At:</b>  <%=listing.created_at.strftime("%m/%d/%Y %I:%M%p")%></p>
+	<%end %>
 
-<div class="postcontent">
-  <%= listing.description.html_safe %>
-</div>
+	<div class="postcontent">
+		<%= listing.description.html_safe %>
+	</div>
 
 
-<% if user_signed_in? %>
-<%= link_to 'Edit', edit_listing_path(listing) %>
-<%= link_to 'Back', listings_path %>
-<%= link_to 'Destroy', listing_path(listing),
-		              method: :delete,
-		              data: { confirm: 'Are you sure?' } %>
-<% end %>
+	<% if user_signed_in? %>
+	<%= link_to 'Edit', edit_listing_path(listing) %>
+	<%= link_to 'Back', listings_path %>
+	<%= link_to 'Destroy', listing_path(listing),
+	method: :delete,
+	data: { confirm: 'Are you sure?' } %>
+	<% end %>
 </div>
