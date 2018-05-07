@@ -2,17 +2,35 @@
 <li class="nav-link"><%= link_to 'New post', new_post_path %> </li>   
 <% end %>
 <div class="row">
+	<div class="col-md-2">
+		<div id="tag_cloud" style="word-wrap:break-word;">
+			<% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
+			<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<%= render partial: "onepost", collection: @posts, as: :post %>
+	</div>
 	<div class="col-md-1">
 	</div>
-	<div class="col-md-10">
-		<%= render partial: "onepost", collection: @posts, as: :post %>
-			<div class="digg_pagination">
+</div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-9 paginationcontainer">
 				<div class="page_info">
 					<%= page_entries_info @posts %>
 				</div>
-				<%= will_paginate @posts, :container => false %>
-			</div>
+				<div class="pagination">
+					<%= will_paginate @posts, :container => false %>
+				</div>
+		</div>
+		<div class="col-md-1">
+		</div>
+</div>
+
+
 	</div>
-	<div class="col-md-1">
-	</div>
+
 </div>

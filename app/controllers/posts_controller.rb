@@ -23,8 +23,12 @@ class PostsController < ApplicationController
   
   def update
     @post = Post.find(params[:id])
+    @post.tag_list.each do | tag | 
+      @post.tag_list.remove(tag)
+    end
+     @post.tag_list.add(params["post"]["tag_list"], parse: true)
  
-    if @post.update(post_params)
+    if @post.update(post_params) 
       redirect_to @post
     else
       render 'edit'

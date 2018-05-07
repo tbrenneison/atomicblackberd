@@ -8,6 +8,7 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>	  
@@ -46,7 +47,7 @@
 			<div class="container-fluid">
 				<%= render 'layouts/flash' if !flash.empty? %>
 					</div> <!--end of container_fluid 1-->
-					<div class="container-fluid" style="padding-top: 10px;">
+					<div class="container-fluid" style="padding-top: 10px; padding-bottom: 10px;">
 							<%= yield %>
 					</div> <!--end of container_fluid 2 -->
 	 
