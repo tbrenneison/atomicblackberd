@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'welcome/index'  
   get 'welcome/logmein'
   get 'welcome/about'
-  get 'welcome/contact'
   
   resources :posts
   resources :listings
