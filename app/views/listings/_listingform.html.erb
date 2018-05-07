@@ -29,6 +29,11 @@
 	 <%= cktext_area :listing, :description, cols: 40 %>
   </p>
  
+ <div class='field'>
+     <%= form.label :tag_list, 'Tags (separated by commas)' %><br/>
+     <%= form.text_field :tag_list %>
+ </div>
+ 
   <p>
     <%= form.submit %>
   </p>

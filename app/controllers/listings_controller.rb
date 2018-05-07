@@ -7,7 +7,11 @@ class ListingsController < ApplicationController
   end
   
   def index
+    if params[:tag]
+      @listings = Listing.tagged_with(params[:tag]).paginate(:page => params[:page]).order("created_at DESC")
+    else
     @listings = Listing.paginate(:page => params[:page]).order("created_at DESC")
+  end
   end
   
   def edit
@@ -16,6 +20,10 @@ class ListingsController < ApplicationController
   
   def update
     @listing = Listing.find(params[:id])
+    @listing.tag_list.each do | tag | 
+      @listing.tag_list.remove(tag)
+    end
+     @listing.tag_list.add(params["listing"]["tag_list"], parse: true)
  
     if @listing.update(listing_params) 
       redirect_to @listing
@@ -29,7 +37,9 @@ class ListingsController < ApplicationController
   end
   
   def create
-    @listing = Listing.new(listing_params)  
+    @listing = Listing.new(listing_params) 
+    #acts_as_taggable_on workaround  
+    @listing.tag_list.add(params["listing"]["tag_list"], parse: true) 
   
     if @listing.save
       redirect_to @listing

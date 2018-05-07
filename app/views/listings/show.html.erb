@@ -14,6 +14,8 @@
   <%= @listing.description.html_safe %>
 </p>
 
+<p>Tags: <%= raw(@listing.tag_list.map { |t| link_to t, listingtag_path(t) }.join(', ')) %></p> 
+
 
 <% if user_signed_in? %>
 <%= link_to 'Edit', edit_listing_path(@listing) %>
