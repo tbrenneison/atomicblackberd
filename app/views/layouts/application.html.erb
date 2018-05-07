@@ -47,18 +47,10 @@
 			<div class="container-fluid">
 				<%= render 'layouts/flash' if !flash.empty? %>
 					</div> <!--end of container_fluid 1-->
-					<div class="container-fluid" style="padding-top: 10px; padding-bottom: 10px;">
+					<div class="container-fluid" style="padding-top: 10px; padding-bottom: 10px; margin-bottom: 0px;">
 							<%= yield %>
 					</div> <!--end of container_fluid 2 -->
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-md-12 footerclass">
-								<footer>
-									<p class="headerfont byline">Atomic Blackbird content copyright 2018 Tori Brenneison</p>
-								</footer>
-							</div>
-						</div>
-					</div>
+
 	 
 				</body>
 				</html>
