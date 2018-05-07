@@ -7,7 +7,14 @@ class PostsController < ApplicationController
   end
   
   def index
-    @posts = Post.paginate(:page => params[:page]).order("created_at DESC")
+      if params[:search]
+        @posts = Post.search(params[:search]).paginate(:page => params[:page]).order("created_at DESC")
+      elsif params[:tag]
+          @posts = Post.tagged_with(params[:tag])
+      else
+        @posts = Post.paginate(:page => params[:page]).order("created_at DESC")
+      end
+
   end
   
   def edit
@@ -29,7 +36,9 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params)  
+    #acts_as_taggable_on workaround  
+    @post.tag_list.add(params["post"]["tag_list"], parse: true)
     
     if @post.save
       redirect_to @post

@@ -6,6 +6,13 @@ GIT
       orm_adapter (~> 0.5.0)
       terrapin
 
+GIT
+  remote: https://github.com/mbleigh/acts-as-taggable-on
+  revision: 38fefffc8f104455f87fdccd77841a2f550b16c6
+  specs:
+    acts-as-taggable-on (5.0.0)
+      activerecord (>= 4.2.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -244,6 +251,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on!
   better_errors
   binding_of_caller
   bootsnap (>= 1.1.0)

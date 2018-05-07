@@ -35,6 +35,8 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 #carrierwave for file upload w/ ckeditor + mini_magick
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+#acts_as_taggable
+gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
