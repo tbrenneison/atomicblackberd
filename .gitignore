@@ -49,3 +49,6 @@ node_modules/
 
 # Ignore uploaded pictures
 public/uploads/
+
+#ignore public/assets dir
+public/assets
